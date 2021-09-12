@@ -1,3 +1,7 @@
+pub fn add_two(a: i32) -> i32 {
+    a + 2
+}
+
 pub struct Guess {
     value: i32,
 }
