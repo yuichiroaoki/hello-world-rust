@@ -21,6 +21,19 @@ impl Guess {
     }
 }
 
+#[derive(Debug)]
+pub struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    pub fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width && self.height > other.height
+    }
+}
+
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -29,5 +42,19 @@ mod tests {
     #[should_panic(expected = "Guess value must be less than or equal to 100")]
     fn greater_than_100() {
         Guess::new(200);
+    }
+
+    #[test]
+    fn larger_can_hold_smaller() {
+        let larger = Rectangle {
+            width: 8,
+            height: 7,
+        };
+        let smaller = Rectangle {
+            width: 5,
+            height: 1,
+        };
+
+        assert!(larger.can_hold(&smaller));
     }
 }
