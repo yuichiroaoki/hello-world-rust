@@ -26,7 +26,6 @@ fn main() {
                 println!("Error {}", e);
                 continue
             },
-            // Err(_) => continue,
         };
 
         println!("You guessed: {}", guess);
