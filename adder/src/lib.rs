@@ -23,6 +23,10 @@ impl Guess {
 
         Guess { value }
     }
+    
+    pub fn get_value(self) -> i32 {
+        self.value
+    }
 }
 
 #[derive(Debug)]

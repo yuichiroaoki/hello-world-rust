@@ -19,9 +19,16 @@ fn main() {
         name: "Bob".to_string(),
         phone: 555_666_7777,
     };
+    let person3 = Person {
+        id: 5,
+        name: "Bab".to_string(),
+        phone: 555_666_7777,
+    };
+
 
     println!("{}", calculate_hash(&person1));
     println!("{}", calculate_hash(&person2));
+    println!("{}", calculate_hash(&person3));
 
     assert!(calculate_hash(&person1) != calculate_hash(&person2));
 
