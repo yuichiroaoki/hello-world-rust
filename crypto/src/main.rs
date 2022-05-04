@@ -1,6 +1,16 @@
 use std::collections::hash_map::DefaultHasher;
 use std::hash::{Hash, Hasher};
 
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+
+fn area(rectangle: &Rectangle) -> u32 {
+    rectangle.width * rectangle.height
+}
+
 fn main() {
     #[derive(Hash)]
     struct Person {
@@ -37,6 +47,17 @@ fn main() {
         t.hash(&mut s);
         s.finish()
     }
+
+
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area(&rect1)
+    );
 
     println!("Hello, world!");
 }
